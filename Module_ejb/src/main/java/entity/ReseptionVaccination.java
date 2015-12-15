@@ -35,4 +35,56 @@ public class ReseptionVaccination {
     @JoinColumn(name = "vaccination_id", referencedColumnName = "id")
     private Vaccination vaccinationEntity; //прием вакцины -> вакцина
 
+
+    public long getId() {
+        return id;
+    }
+
+    public Date getDateIn() {
+        return dateIn;
+    }
+
+    public void setDateIn(Date dateIn) {
+        this.dateIn = dateIn;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public String getSeria() {
+        return seria;
+    }
+
+    public void setSeria(String seria) {
+        this.seria = seria;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public Vaccination getVaccinationEntity() {
+        return vaccinationEntity;
+    }
+
+    public void setVaccinationEntity(Vaccination vaccinationEntity) {
+        this.vaccinationEntity = vaccinationEntity;
+    }
 }

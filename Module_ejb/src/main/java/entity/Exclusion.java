@@ -24,4 +24,32 @@ public class Exclusion {
     @JoinColumn(name = "pacient_id", referencedColumnName = "id")
     private Pacient pacientEntity; //исключние -> пациент
 
+
+    public long getId() {
+        return id;
+    }
+
+    public String getViewEx() {
+        return viewEx;
+    }
+
+    public void setViewEx(String viewEx) {
+        this.viewEx = viewEx;
+    }
+
+    public Vaccination getVaccinationEntity() {
+        return vaccinationEntity;
+    }
+
+    public void setVaccinationEntity(Vaccination vaccinationEntity) {
+        this.vaccinationEntity = vaccinationEntity;
+    }
+
+    public Pacient getPacientEntity() {
+        return pacientEntity;
+    }
+
+    public void setPacientEntity(Pacient pacientEntity) {
+        this.pacientEntity = pacientEntity;
+    }
 }

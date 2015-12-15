@@ -21,4 +21,23 @@ public class Disease {
     private  String nosology;
 
 
+    public long getId() {
+        return id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getNosology() {
+        return nosology;
+    }
+
+    public void setNosology(String nosology) {
+        this.nosology = nosology;
+    }
 }

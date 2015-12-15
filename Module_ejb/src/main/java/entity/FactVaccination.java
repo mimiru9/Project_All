@@ -27,4 +27,32 @@ public class FactVaccination {
     @JoinColumn(name = "pacient_id", referencedColumnName = "id")
     private Pacient pacientEntity; //факт вакцинации -> пациент
 
+
+    public long getId() {
+        return id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Vaccination getVaccinationEntity() {
+        return vaccinationEntity;
+    }
+
+    public void setVaccinationEntity(Vaccination vaccinationEntity) {
+        this.vaccinationEntity = vaccinationEntity;
+    }
+
+    public Pacient getPacientEntity() {
+        return pacientEntity;
+    }
+
+    public void setPacientEntity(Pacient pacientEntity) {
+        this.pacientEntity = pacientEntity;
+    }
 }

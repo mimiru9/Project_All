@@ -30,4 +30,41 @@ public class Record {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id", referencedColumnName = "id")
     private Doctor doctorEntity; //запись -> доктор
+
+
+    public long getId() {
+        return id;
+    }
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(Date dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public StatusRecordEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusRecordEnum status) {
+        this.status = status;
+    }
+
+    public Pacient getPacientEntity() {
+        return pacientEntity;
+    }
+
+    public void setPacientEntity(Pacient pacientEntity) {
+        this.pacientEntity = pacientEntity;
+    }
+
+    public Doctor getDoctorEntity() {
+        return doctorEntity;
+    }
+
+    public void setDoctorEntity(Doctor doctorEntity) {
+        this.doctorEntity = doctorEntity;
+    }
 }

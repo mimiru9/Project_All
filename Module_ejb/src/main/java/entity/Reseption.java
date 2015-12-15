@@ -42,4 +42,56 @@ public class Reseption {
             inverseJoinColumns = {@JoinColumn(name = "disease_id")})
     private List<Disease> diseasesResept=new ArrayList<Disease>(); //прием -> болезнь
 
+
+    public long getId() {
+        return id;
+    }
+
+    public Date getDateView() {
+        return dateView;
+    }
+
+    public void setDateView(Date dateView) {
+        this.dateView = dateView;
+    }
+
+    public FormViewEnum getFormView() {
+        return formView;
+    }
+
+    public void setFormView(FormViewEnum formView) {
+        this.formView = formView;
+    }
+
+    public SentEnum getSent() {
+        return sent;
+    }
+
+    public void setSent(SentEnum sent) {
+        this.sent = sent;
+    }
+
+    public Pacient getPacientEntity() {
+        return pacientEntity;
+    }
+
+    public void setPacientEntity(Pacient pacientEntity) {
+        this.pacientEntity = pacientEntity;
+    }
+
+    public Doctor getDoctorEntity() {
+        return doctorEntity;
+    }
+
+    public void setDoctorEntity(Doctor doctorEntity) {
+        this.doctorEntity = doctorEntity;
+    }
+
+    public List<Disease> getDiseasesResept() {
+        return diseasesResept;
+    }
+
+    public void setDiseasesResept(List<Disease> diseasesResept) {
+        this.diseasesResept = diseasesResept;
+    }
 }

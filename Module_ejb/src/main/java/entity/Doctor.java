@@ -32,7 +32,7 @@ public class Doctor {
     @Column(name = "phone")
     private String phone; //телефон
     @Column(name = "e_mail")
-    private String e_mail; //e-mail
+    private String eMail; //e-mail
     //private long timetable; //ссылка на расписание
     @Column(name = "speciality", nullable = false)
     private String speciality; //специальность
@@ -47,4 +47,104 @@ public class Doctor {
             cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Record> recordDoctor=new ArrayList<Record>(); //доктор -> запись
 
+
+    public long getId() {
+        return id;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public GenderEnum getGender() {
+        return gender;
+    }
+
+    public void setGender(GenderEnum gender) {
+        this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public List<Reseption> getReseptDoctor() {
+        return reseptDoctor;
+    }
+
+    public void setReseptDoctor(List<Reseption> reseptDoctor) {
+        this.reseptDoctor = reseptDoctor;
+    }
+
+    public List<Record> getRecordDoctor() {
+        return recordDoctor;
+    }
+
+    public void setRecordDoctor(List<Record> recordDoctor) {
+        this.recordDoctor = recordDoctor;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
 }

@@ -56,4 +56,112 @@ public class Pacient {
             cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Record> recordPacient=new ArrayList<Record>(); //пациент -> запись
 
+
+    public long getId() {
+        return id;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public GenderEnum getGender() {
+        return gender;
+    }
+
+    public void setGender(GenderEnum gender) {
+        this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getStrahPolis() {
+        return strahPolis;
+    }
+
+    public void setStrahPolis(String strahPolis) {
+        this.strahPolis = strahPolis;
+    }
+
+    public List<Exclusion> getExclusPatient() {
+        return exclusPatient;
+    }
+
+    public void setExclusPatient(List<Exclusion> exclusPatient) {
+        this.exclusPatient = exclusPatient;
+    }
+
+    public List<FactVaccination> getFactsPatient() {
+        return factsPatient;
+    }
+
+    public void setFactsPatient(List<FactVaccination> factsPatient) {
+        this.factsPatient = factsPatient;
+    }
+
+    public List<Reseption> getReseptPacient() {
+        return reseptPacient;
+    }
+
+    public void setReseptPacient(List<Reseption> reseptPacient) {
+        this.reseptPacient = reseptPacient;
+    }
+
+    public List<Record> getRecordPacient() {
+        return recordPacient;
+    }
+
+    public void setRecordPacient(List<Record> recordPacient) {
+        this.recordPacient = recordPacient;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
 }
