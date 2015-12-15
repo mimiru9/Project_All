@@ -30,16 +30,16 @@ public class Reseption {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pacient_id", referencedColumnName = "id")
-    private Pacient pacientEntity;
+    private Pacient pacientEntity; //прием -> пациент
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id", referencedColumnName = "id")
-    private Doctor doctorEntity;
+    private Doctor doctorEntity; //прием -> доктор
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "reseption_disease",
             joinColumns = {@JoinColumn(name = "reseption_id")},
             inverseJoinColumns = {@JoinColumn(name = "disease_id")})
-    private List<Disease> diseasesResept=new ArrayList<Disease>();
+    private List<Disease> diseasesResept=new ArrayList<Disease>(); //прием -> болезнь
 
 }

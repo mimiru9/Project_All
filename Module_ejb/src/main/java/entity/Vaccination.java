@@ -37,14 +37,14 @@ public class Vaccination {
     private UnitsEnum endAgeUnit;
     @OneToMany(mappedBy = "vaccinationEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<ReseptionVaccination> reseptVaccin=new ArrayList<ReseptionVaccination>();
+    private List<ReseptionVaccination> reseptVaccin=new ArrayList<ReseptionVaccination>(); //вакцина -> прием вакцины
 
     @OneToMany(mappedBy = "vaccinationEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<FactVaccination> factsVaccin=new ArrayList<FactVaccination>();
+    private List<FactVaccination> factsVaccin=new ArrayList<FactVaccination>(); //вакцина -> факт вакцинации
 
     @OneToMany(mappedBy = "vaccinationEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Exclusion> exclusVaccin=new ArrayList<Exclusion>();
+    private List<Exclusion> exclusVaccin=new ArrayList<Exclusion>(); //вакцина -> исключение на вакцину
 
 }

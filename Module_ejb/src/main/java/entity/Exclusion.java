@@ -18,10 +18,10 @@ public class Exclusion {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vaccination_id", referencedColumnName = "id")
-    private Vaccination vaccinationEntity;
+    private Vaccination vaccinationEntity; //исключение -> вакцина
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pacient_id", referencedColumnName = "id")
-    private Pacient pacientEntity;
+    private Pacient pacientEntity; //исключние -> пациент
 
 }

@@ -15,18 +15,19 @@ public class Record {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_time", nullable = false)
-    private Date dateTime;
+    private Date dateTime; // дата и время будующего приема
 
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    private StatusRecordEnum status;
+    private StatusRecordEnum status; //статус записи
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pacient_id", referencedColumnName = "id")
-    private Pacient pacientEntity;
+    private Pacient pacientEntity; //запись -> пациент
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id", referencedColumnName = "id")
-    private Doctor doctorEntity;
+    private Doctor doctorEntity; //запись -> доктор
 }

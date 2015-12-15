@@ -24,12 +24,12 @@ public class Pacient {
     private String name;      //Имя пациента
     @Column(name = "patronymic", nullable = false)
     private String patronymic; //Отчетство пациента
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "birthday", nullable = false)
     private Date birthday; //дата рождения
     @Column(name = "gender", nullable = false)
     @Enumerated(EnumType.STRING)
-    private GenderEnum gender;
+    private GenderEnum gender; //пол
     @Column(name = "address", nullable = false)
     private String address; //адрес
     @Column(name = "phone")
@@ -42,18 +42,18 @@ public class Pacient {
 
     @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Exclusion> exclusPatient=new ArrayList<Exclusion>();
+    private List<Exclusion> exclusPatient=new ArrayList<Exclusion>(); //пациент -> исключение
 
     @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<FactVaccination> factsPatient=new ArrayList<FactVaccination>();
+    private List<FactVaccination> factsPatient=new ArrayList<FactVaccination>(); //пациент -> факт вакцинации
 
     @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Reseption> reseptPacient=new ArrayList<Reseption>();
+    private List<Reseption> reseptPacient=new ArrayList<Reseption>(); //пациент -> прием
 
     @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Record> recordPacient=new ArrayList<Record>();
+    private List<Record> recordPacient=new ArrayList<Record>(); //пациент -> запись
 
 }

@@ -21,7 +21,7 @@ public class Doctor {
     private String name;      //Имя пациента
     @Column(name = "patronymic", nullable = false)
     private String patronymic; //Отчетство пациента
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "birthday", nullable = false)
     private Date birthday; //дата рождения
     @Column(name = "gender", nullable = false)
@@ -41,10 +41,10 @@ public class Doctor {
 
     @OneToMany(mappedBy = "doctorEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Reseption> reseptDoctor=new ArrayList<Reseption>();
+    private List<Reseption> reseptDoctor=new ArrayList<Reseption>(); //доктор -> прием пациента
 
     @OneToMany(mappedBy = "doctorEntity",fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Record> recordDoctor=new ArrayList<Record>();
+    private List<Record> recordDoctor=new ArrayList<Record>(); //доктор -> запись
 
 }

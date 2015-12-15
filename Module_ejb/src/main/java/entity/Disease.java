@@ -20,4 +20,5 @@ public class Disease {
     @Column(name = "nosology", nullable = false)
     private  String nosology;
 
+
 }
