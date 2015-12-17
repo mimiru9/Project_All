@@ -12,17 +12,19 @@ import java.util.List;
 
 public class PacientService {
 
-    private EntityManager em = Persistence.createEntityManagerFactory("PersistenceMed").createEntityManager();
 
 
-    public Pacient addPacient(Pacient pacient){
-        em.getTransaction().begin();
-        Pacient pacientFromDB = em.merge(pacient);
-        em.getTransaction().commit();
-        return pacientFromDB;
+    //private EntityManager em = Persistence.createEntityManagerFactory("PersistenceMed").createEntityManager();
+
+
+    public void addPacient(Pacient pacient, EntityManager em){
+        //em.getTransaction().begin();
+        em.merge(pacient);
+        //em.getTransaction().commit();
+        //return
     }
 
-    public void deletePacient(long id){
+    /*public void deletePacient(long id){
         em.getTransaction().begin();
         em.remove(em.find(Pacient.class, id));
         em.getTransaction().commit();
@@ -32,7 +34,7 @@ public class PacientService {
         em.getTransaction().begin();
         em.merge(pacient);
         em.getTransaction().commit();
-    }
+    }*/
 
 /*    public List<Pacient> getAll(){
         TypedQuery<Pacient> namedQuery = em.createNamedQuery("Pacient.getAll", Pacient.class);

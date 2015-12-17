@@ -1,5 +1,5 @@
 import Project_All.NewSessionBean;
-import manager.PacientService;
+import entity.Pacient;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -26,13 +26,14 @@ public class NewServlet extends HttpServlet{
             throws ServletException, IOException {
         resp.setContentType("text/html");
 
-/*        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
-        req.setAttribute("date123", sdf.format(bean.get_time()));
+        //SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
+        //req.setAttribute("date123", sdf.format(bean.get_time()));
+        bean.testSaveRecord();
+        req.setAttribute("date123", "Успеха");
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/mypage.jsp");
-        dispatcher.forward(req, resp);*/
-
-        bean.testSaveRecord();
+        dispatcher.forward(req, resp);
 
     }
     }
