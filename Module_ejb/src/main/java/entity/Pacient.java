@@ -18,25 +18,25 @@ public class Pacient {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "surname", nullable = false)
+    @Column(name = "surname"/*, nullable = false*/)
     private String surname;    //Фамилия пациента
-    @Column(name = "name", nullable = false)
+    @Column(name = "name"/*, nullable = false*/)
     private String name;      //Имя пациента
-    @Column(name = "patronymic", nullable = false)
+    @Column(name = "patronymic"/*, nullable = false*/)
     private String patronymic; //Отчетство пациента
     @Temporal(TemporalType.DATE)
-    @Column(name = "birthday", nullable = false)
+    @Column(name = "birthday"/*, nullable = false*/)
     private Date birthday; //дата рождения
-    @Column(name = "gender", nullable = false)
+    @Column(name = "gender"/*, nullable = false*/)
     @Enumerated(EnumType.STRING)
     private GenderEnum gender; //пол
-    @Column(name = "address", nullable = false)
+    @Column(name = "address"/*, nullable = false*/)
     private String address; //адрес
     @Column(name = "phone")
     private String phone; //телефон
     @Column(name = "e_mail")
     private String eMail; //e-mail
-    @Column(name = "strah_polis", nullable = false)
+    @Column(name = "strah_polis"/*, nullable = false*/)
     private String strahPolis; //страховой полис
     //private long comforTime; //ссылка на комфортное время
 

@@ -52,4 +52,5 @@ public class Exclusion {
     public void setPacientEntity(Pacient pacientEntity) {
         this.pacientEntity = pacientEntity;
     }
+
 }

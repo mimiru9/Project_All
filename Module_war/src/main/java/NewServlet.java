@@ -1,4 +1,5 @@
 import Project_All.NewSessionBean;
+import manager.PacientService;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -17,18 +18,22 @@ import java.text.SimpleDateFormat;
 @WebServlet(name = "NewServlet", urlPatterns = {"/current", "/"})
 public class NewServlet extends HttpServlet{
     @EJB
-    private NewSessionBean NewSessionBean;
+    private NewSessionBean bean;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.setContentType("text/html");
 
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
-        req.setAttribute("date123", sdf.format(NewSessionBean.get_time()));
+/*        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
+        req.setAttribute("date123", sdf.format(bean.get_time()));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/mypage.jsp");
-        dispatcher.forward(req, resp);
+        dispatcher.forward(req, resp);*/
+
+        bean.testSaveRecord();
+
     }
     }
 
