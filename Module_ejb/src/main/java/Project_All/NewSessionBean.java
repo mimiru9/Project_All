@@ -4,6 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Date;
+import java.util.List;
 
 import entity.Pacient;
 import manager.PacientService;
@@ -24,13 +25,12 @@ public class NewSessionBean {
         return currentDate;
     }
 
-    public void testSaveRecord(){
+    public void addPacient(String surname, String name){
 
-        //PacientService service = new PacientService();
-        Pacient pac1 = new Pacient();
-        pac1.setName("Mona");
+        Pacient pac1 = new Pacient(surname, name);
         //Записали в БД
         service.addPacient(pac1, em);
 
     }
+
 }

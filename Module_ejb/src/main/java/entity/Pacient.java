@@ -11,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "pacients")
-//@NamedQuery(name = "entity.Pacient.getAll", query = "SELECT c from entity.Pacient c")
+//@NamedQuery(name = "Pacient.getAll", query = "SELECT c from pacients c")
 public class Pacient {
 
     @Id
@@ -40,21 +40,21 @@ public class Pacient {
     private String strahPolis; //страховой полис
     //private long comforTime; //ссылка на комфортное время
 
-    @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Exclusion> exclusPatient=new ArrayList<Exclusion>(); //пациент -> исключение
+    @OneToMany(mappedBy = "pacientEntity", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Exclusion> exclusPatient = new ArrayList<Exclusion>(); //пациент -> исключение
 
-    @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<FactVaccination> factsPatient=new ArrayList<FactVaccination>(); //пациент -> факт вакцинации
+    @OneToMany(mappedBy = "pacientEntity", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FactVaccination> factsPatient = new ArrayList<FactVaccination>(); //пациент -> факт вакцинации
 
-    @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Reseption> reseptPacient=new ArrayList<Reseption>(); //пациент -> прием
+    @OneToMany(mappedBy = "pacientEntity", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reseption> reseptPacient = new ArrayList<Reseption>(); //пациент -> прием
 
-    @OneToMany(mappedBy = "pacientEntity",fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Record> recordPacient=new ArrayList<Record>(); //пациент -> запись
+    @OneToMany(mappedBy = "pacientEntity", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Record> recordPacient = new ArrayList<Record>(); //пациент -> запись
 
 
     public long getId() {
@@ -164,4 +164,14 @@ public class Pacient {
     public void seteMail(String eMail) {
         this.eMail = eMail;
     }
+
+    public Pacient(String suraname, String name){
+        this.setSurname(suraname);
+        this.setName(name);
+    }
+
+    public Pacient(){
+
+    }
+
 }

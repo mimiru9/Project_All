@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
  * Created by User on 09.12.2015.
  */
 
-@WebServlet(name = "NewServlet", urlPatterns = {"/current", "/"})
+@WebServlet(name = "NewServlet", urlPatterns = {"/"})
 public class NewServlet extends HttpServlet{
     @EJB
     private NewSessionBean bean;
@@ -28,13 +28,24 @@ public class NewServlet extends HttpServlet{
 
         //SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
         //req.setAttribute("date123", sdf.format(bean.get_time()));
-        bean.testSaveRecord();
-        req.setAttribute("date123", "Успеха");
+        //bean.testSaveRecord();
+        //req.setAttribute("date123", bean.testSaveRecord());
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/mypage.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/addPacient.jsp");
         dispatcher.forward(req, resp);
 
     }
+
+/*    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+        throws ServletException,IOException{
+
+        String surname = req.getParameter("surname");
+        String name = req.getParameter("name");
+
+        bean.addPacient(surname, name);
+    }*/
+
     }
 

@@ -19,9 +19,8 @@ public class PacientService {
 
     public void addPacient(Pacient pacient, EntityManager em){
         //em.getTransaction().begin();
-        em.merge(pacient);
+        Pacient pac = em.merge(pacient);
         //em.getTransaction().commit();
-        //return
     }
 
     /*public void deletePacient(long id){
@@ -36,7 +35,7 @@ public class PacientService {
         em.getTransaction().commit();
     }*/
 
-/*    public List<Pacient> getAll(){
+/*    public List<Pacient> getAll(EntityManager em){
         TypedQuery<Pacient> namedQuery = em.createNamedQuery("Pacient.getAll", Pacient.class);
         return namedQuery.getResultList();
     }*/

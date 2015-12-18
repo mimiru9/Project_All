@@ -47,7 +47,7 @@
                 <webModule>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>Module_war</artifactId>
-                    <contextRoot>/time</contextRoot>
+                    <contextRoot>/pacient</contextRoot>
                 </webModule>
             </modules>
         </configuration>

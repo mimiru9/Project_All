@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Time</title>
+    <title>Пациент</title>
 </head>
 <body>
-    <h1>Время: ${date123}</h1>
+    <h1>Пациент добавлен</h1>
 </body>
 </html>
