@@ -3,6 +3,7 @@ package manager;
 import entity.*;
 
 import javax.persistence.*;
+import javax.resource.cci.ResultSet;
 import java.util.Date;
 import java.util.List;
 
@@ -19,9 +20,14 @@ public class PacientService {
 
     public void addPacient(Pacient pacient, EntityManager em){
         //em.getTransaction().begin();
-        Pacient pac = em.merge(pacient);
+        em.merge(pacient);
         //em.getTransaction().commit();
     }
+
+/*    public void getAll(EntityManager em){
+        List result = em.createQuery("select c from Pacient c").getResultList();
+        //return result;
+    }*/
 
     /*public void deletePacient(long id){
         em.getTransaction().begin();
@@ -34,6 +40,7 @@ public class PacientService {
         em.merge(pacient);
         em.getTransaction().commit();
     }*/
+
 
 /*    public List<Pacient> getAll(EntityManager em){
         TypedQuery<Pacient> namedQuery = em.createNamedQuery("Pacient.getAll", Pacient.class);

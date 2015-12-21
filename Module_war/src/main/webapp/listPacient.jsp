@@ -11,6 +11,10 @@
     <title>Пациент</title>
 </head>
 <body>
-    <h1>Пациент добавлен</h1>
+    <h1>Тут список пациентов! Просто он пока что невидимый!</h1>
+    <br>
+    <form action="/medDB/pacient/add_pacient" method="get">
+            <input type="submit" value="Добавить пациента"/>
+    </form>
 </body>
 </html>

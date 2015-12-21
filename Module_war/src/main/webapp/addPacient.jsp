@@ -9,22 +9,74 @@
 <html>
 <head>
     <title>Добавление пациента</title>
+    <script>
+        function goBack() {
+            window.history.back()
+        }
+    </script>
 </head>
 <body>
-    <form action="/pacient/add_pacient" method="POST">
-        <tr>
-            <td>Фамилия</td>
-            <input type="text" name="surname" value=""/>
-        </tr>
-        <br>
-        <tr>
-            <td>Имя</td>
-            <input type="text" name="name" value=""/>
-        </tr>
-        <br>
-        <tr>
-            <input type="submit" value="Добавить"/>
-        </tr>
+    <form action="/medDB/pacient/add_pacient/add" method="post">
+        <table>
+            <tbody>
+            <tr>
+                <td>Фамилия</td>
+                <td>
+                    <input type="text" name="surname" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Имя</td>
+                <td>
+                    <input type="text" name="name" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Отчество</td>
+                <td>
+                    <input type="text" name="patronymic" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Дата рождения</td>
+                <td>
+                    <input type="date" name="birthday" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Пол</td>
+                <td>
+                    <input type="text" name="gender" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Адрес</td>
+                <td>
+                    <input type="text" name="address" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Телефон</td>
+                <td>
+                    <input type="text" name="phone" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td>
+                    <input type="text" name="e_mail" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Номер страхового полиса</td>
+                <td>
+                    <input type="text" name="strah_polis" value=""/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <input type="submit" name="add" value="Добавить"/>
+        <input type="button" name="cancel" value="Назад" onclick="goBack()">
     </form>
 </body>
 </html>

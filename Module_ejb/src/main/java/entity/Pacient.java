@@ -165,9 +165,17 @@ public class Pacient {
         this.eMail = eMail;
     }
 
-    public Pacient(String suraname, String name){
+    public Pacient(String suraname, String name,String patronymic, Date birthday, GenderEnum gender,
+                   String address, String phone, String eMail, String strahPolis){
         this.setSurname(suraname);
         this.setName(name);
+        this.setPatronymic(patronymic);
+        this.setBirthday(birthday);
+        this.setGender(gender);
+        this.setAddress(address);
+        this.setPhone(phone);
+        this.seteMail(eMail);
+        this.setStrahPolis(strahPolis);
     }
 
     public Pacient(){

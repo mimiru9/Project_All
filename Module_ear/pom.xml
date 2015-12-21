@@ -47,7 +47,7 @@
                 <webModule>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>Module_war</artifactId>
-                    <contextRoot>/pacient</contextRoot>
+                    <contextRoot>/medDB</contextRoot>
                 </webModule>
             </modules>
         </configuration>

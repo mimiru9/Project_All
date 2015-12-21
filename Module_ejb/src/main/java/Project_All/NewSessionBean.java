@@ -3,9 +3,12 @@ package Project_All;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import entity.GenderEnum;
 import entity.Pacient;
 import manager.PacientService;
 
@@ -25,12 +28,21 @@ public class NewSessionBean {
         return currentDate;
     }
 
-    public void addPacient(String surname, String name){
+    public void addPacient(String surname, String name, String patronymic, String birthday, String gender,
+                           String address, String phone, String eMail, String strahPolis){
 
-        Pacient pac1 = new Pacient(surname, name);
-        //Записали в БД
-        service.addPacient(pac1, em);
-
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date bday = format.parse(birthday);
+            GenderEnum genderEnum = GenderEnum.valueOf();
+            Pacient pac1 = new Pacient(surname, name, patronymic, bday, gender, address, phone,eMail, strahPolis);
+            service.addPacient(pac1, em);
+        } catch (ParseException ex) {
+            System.out.println("Это не должно произойти");
+        }
     }
 
+/*    public void getAll(){
+        service.getAll(em);
+    }*/
 }
