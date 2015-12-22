@@ -13,27 +13,24 @@ import java.io.IOException;
  * Created by User on 18.12.2015.
  */
 @WebServlet(name = "PacientServlet", urlPatterns = {"/pacient"})
-public class PacientServlet extends HttpServlet {
+public class PacientServlet extends Dispatcher{
 
     @EJB
     private NewSessionBean bean;
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html");
         //bean.getList();
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/listPacient.jsp");
-        dispatcher.forward(request, response);
+        this.forward("/listPacient.jsp", request, response);
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html");
-
         //bean.getAll();
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/listPacient.jsp");
-        dispatcher.forward(request, response);
+        this.forward("/listPacient.jsp", request, response);
     }
 }

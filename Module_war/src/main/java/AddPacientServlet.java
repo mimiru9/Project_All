@@ -16,35 +16,33 @@ import java.text.SimpleDateFormat;
  */
 
 @WebServlet(name = "AddPacientServlet", urlPatterns = {"/pacient/add_pacient"})
-public class AddPacientServlet extends HttpServlet{
+public class AddPacientServlet extends Dispatcher{
     @EJB
     private NewSessionBean bean;
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        resp.setContentType("text/html");
+        response.setContentType("text/html");
 
         //SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
         //req.setAttribute("date123", sdf.format(bean.get_time()));
         //bean.testSaveRecord();
         //req.setAttribute("date123", bean.testSaveRecord());
 
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addPacient.jsp");
-        dispatcher.forward(req, resp);
+        this.forward("/addPacient.jsp", request, response);
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException,IOException{
 
-        resp.setContentType("text/html");
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addPacient.jsp");
-        dispatcher.forward(req, resp);
+        response.setContentType("text/html");
+
+        this.forward("/addPacient.jsp", request, response);
     }
     }
 

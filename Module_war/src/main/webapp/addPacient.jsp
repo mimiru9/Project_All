@@ -46,7 +46,10 @@
             <tr>
                 <td>Пол</td>
                 <td>
-                    <input type="text" name="gender" value=""/>
+                    <select name="gender" style="width: 146.5px">
+                        <option value="male">мужской</option>
+                        <option value="female">женский</option>
+                    </select>
                 </td>
             </tr>
             <tr>

@@ -31,18 +31,14 @@ public class NewSessionBean {
     public void addPacient(String surname, String name, String patronymic, String birthday, String gender,
                            String address, String phone, String eMail, String strahPolis){
 
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
         try {
             Date bday = format.parse(birthday);
-            GenderEnum genderEnum = GenderEnum.valueOf();
-            Pacient pac1 = new Pacient(surname, name, patronymic, bday, gender, address, phone,eMail, strahPolis);
+            GenderEnum genderEnum = GenderEnum.valueOf(gender);
+            Pacient pac1 = new Pacient(surname, name, patronymic, bday, genderEnum, address, phone,eMail, strahPolis);
             service.addPacient(pac1, em);
         } catch (ParseException ex) {
             System.out.println("Это не должно произойти");
         }
     }
-
-/*    public void getAll(){
-        service.getAll(em);
-    }*/
 }

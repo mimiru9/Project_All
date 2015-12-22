@@ -19,9 +19,7 @@ public class PacientService {
 
 
     public void addPacient(Pacient pacient, EntityManager em){
-        //em.getTransaction().begin();
         em.merge(pacient);
-        //em.getTransaction().commit();
     }
 
 /*    public void getAll(EntityManager em){

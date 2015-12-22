@@ -23,22 +23,15 @@ public class PacientServletAdd extends Dispatcher {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setCharacterEncoding("UTF8");
 
-        if(request.getParameter("add")!=null) {
+        //if(request.getParameter("add")!=null) {
 
-            String surname = request.getParameter("surname");
-            String name = request.getParameter("name");
-            String patronymic = request.getParameter("patronymic");
-            String birthday = request.getParameter("birthday");
-            String gender = request.getParameter("gender");
-            String address = request.getParameter("address");
-            String phone = request.getParameter("phone");
-            String eMail = request.getParameter("e_mail");
-            String strahPolis = request.getParameter("strah_polis");
-
-            bean.addPacient(surname, name, patronymic, birthday,gender,address, phone, eMail, strahPolis);
-            this.forward("/PacientAdd.jsp", request, response);
-        }
+        bean.addPacient(request.getParameter("surname"), request.getParameter("name"), request.getParameter("patronymic"),
+                request.getParameter("birthday"), request.getParameter("gender"), request.getParameter("address"),
+                request.getParameter("phone"), request.getParameter("e_mail"), request.getParameter("strah_polis"));
+        this.forward("/PacientAdd.jsp", request, response);
+        //}
         //else if(request.getParameter("cancel")!=null){
             //this.forward("/PacientServlet.java", request, response);
         //}
