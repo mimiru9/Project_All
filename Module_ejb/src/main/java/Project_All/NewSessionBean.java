@@ -5,11 +5,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import entity.GenderEnum;
 import entity.Pacient;
+import manager.PacientRow;
 import manager.PacientService;
 
 /**
@@ -40,5 +42,9 @@ public class NewSessionBean {
         } catch (ParseException ex) {
             System.out.println("Это не должно произойти");
         }
+    }
+
+    public List<PacientRow> getAll(){
+        return service.getAll(em);
     }
 }

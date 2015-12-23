@@ -4,6 +4,7 @@ import entity.*;
 
 import javax.persistence.*;
 import javax.resource.cci.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,19 +14,20 @@ import java.util.List;
 
 public class PacientService {
 
-
-
-    //private EntityManager em = Persistence.createEntityManagerFactory("PersistenceMed").createEntityManager();
-
-
-    public void addPacient(Pacient pacient, EntityManager em){
+    public void addPacient(Pacient pacient, EntityManager em) {
         em.merge(pacient);
     }
 
-/*    public void getAll(EntityManager em){
-        List result = em.createQuery("select c from Pacient c").getResultList();
-        //return result;
-    }*/
+    public List<PacientRow> getAll(EntityManager em) {
+
+        List<PacientRow> ret = new ArrayList<PacientRow>();
+        TypedQuery<PacientRow> query = em.createQuery("select new manager.PacientRow(surname, name, patronymic, birthday) from Pacient", PacientRow.class);
+        List<PacientRow> list = query.getResultList();
+        for (PacientRow pacRow : list) {
+            ret.add(pacRow);
+        }
+        return ret;
+    }
 
     /*public void deletePacient(long id){
         em.getTransaction().begin();
@@ -37,11 +39,5 @@ public class PacientService {
         em.getTransaction().begin();
         em.merge(pacient);
         em.getTransaction().commit();
-    }*/
-
-
-/*    public List<Pacient> getAll(EntityManager em){
-        TypedQuery<Pacient> namedQuery = em.createNamedQuery("Pacient.getAll", Pacient.class);
-        return namedQuery.getResultList();
     }*/
 }

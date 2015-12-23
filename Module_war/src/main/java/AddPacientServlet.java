@@ -28,8 +28,6 @@ public class AddPacientServlet extends Dispatcher{
 
         //SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
         //req.setAttribute("date123", sdf.format(bean.get_time()));
-        //bean.testSaveRecord();
-        //req.setAttribute("date123", bean.testSaveRecord());
 
         this.forward("/addPacient.jsp", request, response);
 

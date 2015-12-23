@@ -1,4 +1,5 @@
 import Project_All.NewSessionBean;
+import manager.PacientRow;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by User on 18.12.2015.
@@ -30,7 +33,8 @@ public class PacientServlet extends Dispatcher{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        //bean.getAll();
+        List<PacientRow> pacList = bean.getAll();
+        request.setAttribute("pacList", pacList);
         this.forward("/listPacient.jsp", request, response);
     }
 }
