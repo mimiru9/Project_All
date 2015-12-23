@@ -18,7 +18,7 @@
     <%
         List<PacientRow> list = (List<PacientRow>) request.getAttribute("pacList");
     %>
-    <table border="1" cellpadding="10" width="30%">
+    <table border="1" cellpadding="6" width="50%">
         <caption><h3>Список пациентов</h3></caption>
         <tr>
             <th>Фамилия</th>
@@ -52,7 +52,7 @@
     </table>
     <br>
     <br>
-    <form action="/medDB/pacient/add_pacient" method="get">
+    <right></right><form action="/medDB/pacient/add_pacient" method="get">
             <input type="submit" value="Добавить пациента"/>
     </form>
 </body>

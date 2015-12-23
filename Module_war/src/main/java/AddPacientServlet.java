@@ -29,7 +29,7 @@ public class AddPacientServlet extends Dispatcher{
         //SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
         //req.setAttribute("date123", sdf.format(bean.get_time()));
 
-        this.forward("/addPacient.jsp", request, response);
+        this.forward("/AddPacient.jsp", request, response);
 
     }
 
@@ -40,7 +40,7 @@ public class AddPacientServlet extends Dispatcher{
 
         response.setContentType("text/html");
 
-        this.forward("/addPacient.jsp", request, response);
+        this.forward("/AddPacient.jsp", request, response);
     }
     }
 

@@ -30,7 +30,7 @@ public class NewSessionBean {
         return currentDate;
     }
 
-    public void addPacient(String surname, String name, String patronymic, String birthday, String gender,
+    public boolean addPacient(String surname, String name, String patronymic, String birthday, String gender,
                            String address, String phone, String eMail, String strahPolis){
 
         SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
@@ -39,8 +39,10 @@ public class NewSessionBean {
             GenderEnum genderEnum = GenderEnum.valueOf(gender);
             Pacient pac1 = new Pacient(surname, name, patronymic, bday, genderEnum, address, phone,eMail, strahPolis);
             service.addPacient(pac1, em);
+            return true;
         } catch (ParseException ex) {
-            System.out.println("Это не должно произойти");
+            System.out.println(ex.getMessage());
+            return false;
         }
     }
 

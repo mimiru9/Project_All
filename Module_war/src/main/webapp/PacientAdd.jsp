@@ -11,7 +11,7 @@
     <title>Добавление пациента</title>
 </head>
 <body>
-<h2>Пациент добавлен!</h2>
+<h2>${massage}</h2>
 <br>
 <form action="/medDB/pacient" method="GET">
     <tr>

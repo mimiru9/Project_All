@@ -18,5 +18,5 @@ public class PacientRow {
         this.patronymic = patronymic;
         this.birthday = birthday;
     }
-    
+
 }

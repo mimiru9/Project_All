@@ -27,10 +27,17 @@ public class PacientServletAdd extends Dispatcher {
 
         //if(request.getParameter("add")!=null) {
 
-        bean.addPacient(request.getParameter("surname"), request.getParameter("name"), request.getParameter("patronymic"),
+        boolean flag = bean.addPacient(request.getParameter("surname"), request.getParameter("name"), request.getParameter("patronymic"),
                 request.getParameter("birthday"), request.getParameter("gender"), request.getParameter("address"),
                 request.getParameter("phone"), request.getParameter("e_mail"), request.getParameter("strah_polis"));
+        if (flag){
+            request.setAttribute("massage", "Пациент добавлен!");
+        }
+        else{
+            request.setAttribute("massage", "Неверно введены данные!");
+        }
         this.forward("/PacientAdd.jsp", request, response);
+
         //}
         //else if(request.getParameter("cancel")!=null){
             //this.forward("/PacientServlet.java", request, response);

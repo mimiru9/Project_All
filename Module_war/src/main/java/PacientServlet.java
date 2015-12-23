@@ -26,7 +26,7 @@ public class PacientServlet extends Dispatcher{
             throws ServletException, IOException {
         response.setContentType("text/html");
         //bean.getList();
-        this.forward("/listPacient.jsp", request, response);
+        this.forward("/ListPacient.jsp", request, response);
     }
 
     @Override
@@ -35,6 +35,6 @@ public class PacientServlet extends Dispatcher{
         response.setContentType("text/html");
         List<PacientRow> pacList = bean.getAll();
         request.setAttribute("pacList", pacList);
-        this.forward("/listPacient.jsp", request, response);
+        this.forward("/ListPacient.jsp", request, response);
     }
 }
