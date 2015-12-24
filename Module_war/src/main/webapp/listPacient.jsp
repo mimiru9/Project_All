@@ -52,7 +52,7 @@
     </table>
     <br>
     <br>
-    <right></right><form action="/medDB/pacient/add_pacient" method="get">
+    <right></right><form action="/medDB/pacient/add_pacient" method="post">
             <input type="submit" value="Добавить пациента"/>
     </form>
 </body>

@@ -21,13 +21,13 @@ public class PacientServlet extends Dispatcher{
     @EJB
     private NewSessionBean bean;
 
-    @Override
+/*    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
         //bean.getList();
         this.forward("/ListPacient.jsp", request, response);
-    }
+    }*/
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

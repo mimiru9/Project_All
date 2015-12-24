@@ -1,4 +1,7 @@
-<%--
+
+<%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.List" %>
+<%@ page import="manager.EnumService" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 18.12.2015
@@ -47,8 +50,15 @@
                 <td>Пол</td>
                 <td>
                     <select name="gender" style="width: 146.5px">
-                        <option value="male">мужской</option>
-                        <option value="female">женский</option>
+                        <%
+                            List<EnumService> list = (List<EnumService>) request.getAttribute("enum");
+                            for (EnumService serv : list) {
+                        %>
+                                <option value=<%=serv.original%>><%=serv.transl%></option>
+                        <%
+                            }
+                        %>
+
                     </select>
                 </td>
             </tr>
